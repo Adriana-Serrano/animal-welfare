@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forms Access Verification</title>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f4f6f8;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+max-width:450px;
+text-align:center;
+}
+
+h2{
+margin-bottom:10px;
+}
+
+p{
+color:#555;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Access Verification</h2>
+
+<p>
+To protect the integrity of the reporting system and prevent automated submissions,
+please complete the verification below before accessing the form.
+</p>
+
+<br>
+
+<div class="cf-turnstile"
+data-sitekey="0x4AAAAAACm0OZhYcRGT8tCn"
+data-callback="verified">
+</div>
+
+</div>
+
+<script>
+
+function verified(){
+window.location.href="https://forms.office.com/Pages/ResponsePage.aspx?id=wV3t2Vi41UG_v9slVOJjbkVOLUPNIwJCgPj0TomTv1RUQldNTFBXTlY0U1RBQkdCNkpLNTg2VEFPOS4u";
+}
+
+</script>
+
+</body>
+</html>
