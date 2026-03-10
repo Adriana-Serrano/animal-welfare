@@ -3,40 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
 
 <title>Forms Access Verification</title>
 
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
     <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-body{
-font-family: Arial, sans-serif;
-background:#f4f6f8;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-margin:0;
-}
+  html, body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
 
-.card{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-max-width:450px;
-text-align:center;
-}
+  body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background-image: url('assets/phsu_bg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+  }
 
-h2{
-margin-bottom:10px;
-}
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.35);
+    z-index: 0;
+  }
 
-p{
-color:#555;
-}
+  .card {
+    position: relative;
+    z-index: 1;
+    width: min(90%, 700px);
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    padding: 40px 32px;
+    text-align: center;
+  }
 
+  .card h1 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: 18px;
+    color: #111;
+  }
+
+  .card p {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 28px;
+  }
+
+  .captcha-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding: 18px;
+      background-position: center center;
+    }
+
+    .card {
+      width: 100%;
+      padding: 28px 20px;
+      border-radius: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body {
+      padding: 14px;
+      align-items: center;
+    }
+
+    .card {
+      padding: 22px 16px;
+      border-radius: 14px;
+    }
+
+    .card p {
+      margin-bottom: 20px;
+    }
+  }
 </style>
 
 </head>
